@@ -1,0 +1,27 @@
+.add__container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .add__type{
+        height: 2.4rem;
+        width: 3rem;
+    }
+
+    .add__description{
+        height: 2rem;
+        width: 20rem;
+        padding-left: 1rem;
+    }
+
+    .add__value{
+        height: 2rem;
+        width: 5rem;
+        padding-left: 1rem;
+    }
+
+    .add__btn{
+        height: 2.4rem;
+        width: 2rem;
+    }
+}

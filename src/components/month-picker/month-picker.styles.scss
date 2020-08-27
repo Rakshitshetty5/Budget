@@ -1,0 +1,13 @@
+.month-picker{
+    display: flex;
+    justify-content: center;
+    
+    .month-picker__el{
+        height: 3rem;
+        width: 10rem;
+        background: black;
+        color: white;
+        text-align: center;
+        border: none;
+    }
+}

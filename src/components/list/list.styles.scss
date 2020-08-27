@@ -1,0 +1,16 @@
+.list{
+    margin : 2rem;
+
+    .list-items{
+        display : flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .list-item{
+            height: 5rem;
+            width: 10rem;
+            display: flex;
+            align-items: center;
+        }
+    }
+}

@@ -1,0 +1,13 @@
+.budget-overview{
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .budget-overview__field{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
