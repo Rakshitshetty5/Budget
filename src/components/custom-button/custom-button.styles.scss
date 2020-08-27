@@ -7,4 +7,20 @@
     background: black;
     border: none;
     outline : none;
+
+    &.custom-button__middle{
+        margin-left: calc(50% - 2.5rem);
+    }
+
+    &.custom-button__option-selector{
+        width: 50%;
+        height: 3rem;
+        font-size: 1rem;
+        background: white;
+        color: black;
+        &.active{
+            background: darkblue;
+            color : white;
+        }
+    }
 }

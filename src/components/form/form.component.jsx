@@ -11,7 +11,7 @@ const Form = () => (
             </select>
             <input type="text" className="add__description" placeholder="Add description" />
             <input type="number" className="add__value" placeholder="Value" />
-            <button className="add__btn">+</button>
+            <button className="add__btn">&#10004;</button>
         </div>
     </div>
 )

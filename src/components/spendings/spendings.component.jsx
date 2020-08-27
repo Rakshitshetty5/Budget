@@ -12,7 +12,7 @@ const Spendings = () => (
         <BudgetOverview />
         <Form />
         <List />
-        <CustomButton />
+        <CustomButton spendings = {'spendings'}>Save</CustomButton>
     </div>
 
 )

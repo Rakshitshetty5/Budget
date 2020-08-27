@@ -3,25 +3,39 @@
     justify-content: center;
     align-items: center;
 
-    .add__type{
+    @mixin form-styles{
         height: 2.4rem;
+        background: white;
+        border: 1px solid black;
+    }
+ 
+
+    .add__type{
         width: 3rem;
+        font-size: 1.5rem;
+        @include form-styles;
     }
 
     .add__description{
-        height: 2rem;
         width: 20rem;
         padding-left: 1rem;
+        @include form-styles;
+
     }
 
     .add__value{
-        height: 2rem;
         width: 5rem;
         padding-left: 1rem;
+        @include form-styles;
+
+
     }
 
     .add__btn{
-        height: 2.4rem;
         width: 2rem;
+        color : darkblue;
+        font-size: 1.5rem;
+        @include form-styles;
+
     }
 }
