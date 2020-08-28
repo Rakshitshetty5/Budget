@@ -10,10 +10,16 @@ class MonthPicker extends React.Component {
       startDate: new Date()
     }
   }
+
+  componentDidMount(){
+    console.log(this.state.startDate)
+  }
+
+
   handleChange = date => {
     this.setState({
       startDate: date
-    });
+    }, () => console.log(this.state.startDate));
   };
   render(){
   return (
