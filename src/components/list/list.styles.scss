@@ -9,10 +9,23 @@
         .list-item{
             height: 3rem;
             width: 20rem;
-            display: flex;
-            align-items: center;
             background: wheat;
             margin-bottom: 0.4rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .list-item__details{
+                display: flex;
+                align-items: center;
+            }
+
+
+            .list-item__delete{
+                font-size: 2rem;
+                background: none;
+                border: none;
+            }
         }
     }
 }

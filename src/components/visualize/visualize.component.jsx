@@ -9,16 +9,20 @@ var CanvasJSChart = CanvasJSReact.CanvasJSChart
 
 
 const Visualize = () => {
-    
-    const options = {
+    let income = 222222;
+
+    const options1 = {
+        theme: "bright",
         animationEnabled: true,
+        exportFileName: "Budget Overview",
+        exportEnabled: true,
         title: {
-            text: "Customer Satisfaction"
+            text: "Budget Overview"
         },
         subtitles: [{
-            text: "71% Positive",
+            text: `Total Income: ${income}`,
             verticalAlign: "center",
-            fontSize: 24,
+            fontSize: 15,
             dockInsidePlotArea: true
         }],
         data: [{
@@ -27,18 +31,46 @@ const Visualize = () => {
             indexLabel: "{name}: {y}",
             yValueFormatString: "#,###'%'",
             dataPoints: [
-                { name: "Unsatisfied", y: 5 },
-                { name: "Very Unsatisfied", y: 31 },
-                { name: "Very Satisfied", y: 40 },
-                { name: "Satisfied", y: 17 },
-                { name: "Neutral", y: 7 }
+                { name: "Expenses", y: 40 },
+                { name: "Savings", y: 60 },
             ]
         }]
     }
+
+    const options2 = {
+        theme: "bright",
+        animationEnabled: true,
+        exportFileName: "Expenses Overview",
+        exportEnabled: true,
+        title:{
+            text: "Expenses Overview"
+        },
+        data: [{
+            type: "pie",
+            showInLegend: true,
+            legendText: "{label}",
+            toolTipContent: "{label}: <strong>{y}%</strong>",
+            indexLabel: "{y}%",
+            indexLabelPlacement: "inside",
+            dataPoints: [
+                { y: 32, label: "Medical" },
+                { y: 22, label: "Clothing" },
+                { y: 15, label: "Education" },
+                { y: 19, label: "Rent" },
+                { y: 5, label: "Groceries" },
+                { y: 7, label: "Entertainment" }
+            ]
+        }]
+    }
+
     return(
-        <div>
-            <h1>Sorry!!! Nothing to visualize</h1>
-            <CanvasJSChart options = {options} />
+        <div className="visualize">
+            <div className="chart-styles">
+                <CanvasJSChart options = {options1} />
+            </div>
+            <div className="chart-styles">
+                <CanvasJSChart options = {options2} />
+            </div>
         </div>
     )
 }

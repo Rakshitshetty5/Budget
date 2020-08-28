@@ -7,16 +7,11 @@ const List = () => (
         <h1>Expenses</h1>
         <div className="list-items">
             <div className="list-item">
-                <h2>Food</h2>
-                <span> : $1000</span>
-            </div >
-            <div className="list-item">
-                <h2>Clothing</h2> 
-                <span> : $1000</span>
-            </div>
-            <div className="list-item"> 
-                <h2>Shelter</h2>
-                <span> : $1000</span>
+                <div className="list-item__details">
+                    <h2>Food</h2>
+                    <span> : $1000</span>
+                </div>
+                <button className="list-item__delete">&#128502;</button>
             </div>
         </div>
     </div>
