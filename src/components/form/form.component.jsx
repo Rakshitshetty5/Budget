@@ -20,7 +20,10 @@ class Form extends React.Component{
     handleSubmit = event => {
         event.preventDefault();
         const { addTransaction } = this.props;
-        addTransaction(this.state);
+        if(this.state.description.length !== 0 && this.state.value){
+            addTransaction(this.state);
+        }
+        
     }
 
     handleChange = event => {

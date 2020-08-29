@@ -6,6 +6,7 @@ export const getMonth = ( date ) => {
 //budget is monthly Transactions
 
 export const addTransactionToBudget = (budget, month, transaction) => {
+    
     if(budget.length === 0 || !budget[month]){
         let epicBudget;
         if(transaction.operator === "inc"){
@@ -14,7 +15,9 @@ export const addTransactionToBudget = (budget, month, transaction) => {
                     [transaction.operator] : {
                         [transaction.description] : transaction.value,
                     },
-                    exp : {}
+                    exp : {},
+                    TotalIncome : transaction.value,
+                    TotalExpense : 0
                     
                 }
             }
@@ -24,12 +27,31 @@ export const addTransactionToBudget = (budget, month, transaction) => {
                     [transaction.operator] : {
                         [transaction.description] : transaction.value,
                     },
-                    inc : {}
+                    inc : {},
+                    TotalIncome : 0,
+                    TotalExpense : transaction.value
                 }
             }
          }
         return epicBudget
     }
+
+
+    if(transaction.operator === "inc"){
+        if(!budget[month].inc[transaction.description]){
+            budget[month].TotalIncome = parseInt(budget[month].TotalIncome) + parseInt(transaction.value)
+        }else{
+            budget[month].TotalIncome = parseInt(budget[month].TotalIncome) - parseInt(budget[month].inc[transaction.description]) + parseInt(transaction.value)
+
+        }
+    }else{
+        if(!budget[month].exp[transaction.description]){
+            budget[month].TotalExpense = parseInt(budget[month].TotalExpense) + parseInt(transaction.value)
+        }else{
+            budget[month].TotalExpense = parseInt(budget[month].TotalExpense) - parseInt(budget[month].exp[transaction.description]) + parseInt(transaction.value)
+
+        }  
+    }   
 
     const epicBudget = { ...budget,
             [month] : {
