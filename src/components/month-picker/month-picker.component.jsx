@@ -1,7 +1,13 @@
 import React from 'react';
+
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import './month-picker.styles.scss'
+
+import { connect } from 'react-redux'
+
+import { selectedMonth } from '../../redux/budget/budget.actions'
+
+import './month-picker.styles.scss';
 
 class MonthPicker extends React.Component {
   constructor(){
@@ -12,17 +18,26 @@ class MonthPicker extends React.Component {
   }
 
   componentDidMount(){
-    console.log(this.state.startDate)
+    const { selectedMonth } = this.props;  
+    selectedMonth(this.state.startDate);
+  }
+
+  componentDidUpdate(){
+    const { selectedMonth } = this.props;  
+    selectedMonth(this.state.startDate);
   }
 
 
   handleChange = date => {
     this.setState({
       startDate: date
-    }, () => console.log(this.state.startDate));
+    });
+
   };
   render(){
   return (
+
+
     <div className="month-picker">
       <DatePicker
           dateFormat="MMMM yyyy"
@@ -36,4 +51,8 @@ class MonthPicker extends React.Component {
   }
 }
 
-export default MonthPicker;
+const mapDispatchToProps = dispatch => ({
+  selectedMonth: month => dispatch(selectedMonth(month)) 
+})
+
+export default connect(null,mapDispatchToProps)(MonthPicker);

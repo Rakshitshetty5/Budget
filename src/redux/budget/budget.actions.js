@@ -1,12 +1,12 @@
 import { BudgetActionTypes } from './budget.types';
 
 
-export const AddTransaction = transaction => ({
+export const addTransaction = transaction => ({
     type : BudgetActionTypes.ADD_TRANSACTION,
     payload : transaction
 })
 
-export const SelectedMonth = month => ({
+export const selectedMonth = month => ({
     type: BudgetActionTypes.SELECTED_MONTH,
-    payload : month.split(" ")[1]
+    payload : month
 })

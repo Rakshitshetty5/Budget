@@ -1,5 +1,8 @@
 import React from 'react';
 
+import { connect } from 'react-redux'
+
+import { addTransaction } from '../../redux/budget/budget.actions' 
 
 import './form.styles.scss';
 
@@ -16,7 +19,8 @@ class Form extends React.Component{
 
     handleSubmit = event => {
         event.preventDefault();
-        console.log(this.state);
+        const { addTransaction } = this.props;
+        addTransaction(this.state);
     }
 
     handleChange = event => {
@@ -56,6 +60,10 @@ class Form extends React.Component{
 
 }
 
+const mapDispatchToProps = dispatch => ({
+    addTransaction : transaction => dispatch(addTransaction(transaction))
+})
 
 
-export default Form
+
+export default connect(null, mapDispatchToProps)(Form)

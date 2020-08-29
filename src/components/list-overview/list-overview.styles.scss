@@ -1,0 +1,19 @@
+.list-overview{
+    margin : 2rem;
+    display: flex;
+    justify-content: space-between;
+
+    .list-items{
+        display : flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+
+}
+@media (max-width: 710px) {
+    .list-overview {
+        display: flex;
+        flex-direction: column;
+    }
+  }
