@@ -9,7 +9,7 @@ const List = ( { transaction } ) => {
          <div className="list-item">
             <div className="list-item__details">
                 <h2>{ description }</h2>
-                <span> : {value}</span>
+                <span> : ${value}</span>
             </div>
             <button className="list-item__delete">&#128502;</button>
         </div>
