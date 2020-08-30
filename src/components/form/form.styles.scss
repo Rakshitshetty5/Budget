@@ -4,9 +4,10 @@
     align-items: center;
 
     @mixin form-styles{
-        height: 2.4rem;
+        height: 2.6rem;
         background: white;
         border: 1px solid black;
+        margin-left: 0.3rem;
     }
  
 
@@ -14,6 +15,12 @@
         width: 3rem;
         font-size: 1.5rem;
         @include form-styles;
+
+        &:hover,
+        &:active{
+            border-color : blue;
+            outline : blue;
+        }
     }
 
     .add__description{
@@ -26,16 +33,18 @@
     .add__value{
         width: 5rem;
         padding-left: 1rem;
+        border-radius: 10% 10%;
         @include form-styles;
 
 
     }
 
     .add__btn{
-        width: 2rem;
+        width: 2.6rem;
         color : darkblue;
         font-size: 1.5rem;
         @include form-styles;
+        border-radius: 50% 50%;
 
     }
 }

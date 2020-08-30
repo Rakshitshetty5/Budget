@@ -1,14 +1,24 @@
 import React from 'react'
 
 import CanvasJSReact from '../../assets/canvasjs.react';
+import { connect } from 'react-redux'
+import { createStructuredSelector } from 'reselect'
 
+import {  selectTotalExpense , selectMonthlyBudgetExpense } from '../../redux/budget/budget.selectors'
 
 
 var CanvasJSChart = CanvasJSReact.CanvasJSChart
 
 
-const PieChart = () => {
-    let income = 222222;
+const PieChart = ({ totalExpense, expenseList }) => {
+    
+    let expenseListArray;
+
+    if(expenseList){
+        expenseListArray = Object.entries(expenseList)
+    }else{
+        expenseListArray = []
+    }
 
     const options = {
         theme: "bright",
@@ -25,14 +35,7 @@ const PieChart = () => {
             toolTipContent: "{label}: <strong>{y}%</strong>",
             indexLabel: "{y}%",
             indexLabelPlacement: "inside",
-            dataPoints: [
-                { y: 32, label: "Medical" },
-                { y: 22, label: "Clothing" },
-                { y: 15, label: "Education" },
-                { y: 19, label: "Rent" },
-                { y: 5, label: "Groceries" },
-                { y: 7, label: "Entertainment" }
-            ]
+            dataPoints: expenseListArray.map(transaction => ({ y : ((transaction[1]/totalExpense)*100).toFixed(2), label : transaction[0]  }))
         }]
     }
 
@@ -41,4 +44,11 @@ const PieChart = () => {
     )
 }
 
-export default PieChart
+const mapStateToProps = createStructuredSelector(
+    {
+        totalExpense : selectTotalExpense,
+        expenseList : selectMonthlyBudgetExpense
+    }
+)
+
+export default connect(mapStateToProps)(PieChart);

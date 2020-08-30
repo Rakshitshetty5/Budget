@@ -6,26 +6,28 @@ import List from '../list/list.component'
 import { createStructuredSelector } from 'reselect'
 import { connect } from 'react-redux'
 
-import { selectMonthlyBudget } from '../../redux/budget/budget.selectors'
+import { selectMonthlyBudgetIncome, selectMonthlyBudgetExpense } from '../../redux/budget/budget.selectors'
 
-const ListOverview = ( { list } ) => {
+const ListOverview = ( { monthlyIncome, monthlyExpense } ) => {
     let income;
     let expenses;
-    if(list.length !== 0){
-        income = Object.entries(list["inc"]);
-        expenses = Object.entries(list["exp"]);
+    if(monthlyIncome){
+        income = Object.entries(monthlyIncome);
+    }
+    if(monthlyExpense){
+        expenses = Object.entries(monthlyExpense);
     }
    
     return(
     <div className="list-overview">
         <div className="income">
-            <h1>Income</h1>
+            <h1 className="income-header">Income</h1>
             {
             income ?
                 <div className="list-items">
                     {
                         income.map(transaction => 
-                            <List transaction= {transaction} key = {transaction[0]} />
+                            <List transaction= {transaction} inc = {"inc"} key = {transaction[0]} />
                         )
                     }
                 </div>
@@ -34,7 +36,7 @@ const ListOverview = ( { list } ) => {
             }   
         </div>
         <div className="expenses">
-            <h1>Expenses</h1>
+            <h1 className="expenses-header">Expenses</h1>
             {
                 expenses ?
                     <div className="list-items">
@@ -52,7 +54,8 @@ const ListOverview = ( { list } ) => {
 ) }  
 
 const mapStateToProps = createStructuredSelector({
-    list : selectMonthlyBudget
+    monthlyIncome : selectMonthlyBudgetIncome,
+    monthlyExpense : selectMonthlyBudgetExpense 
 })
 
 

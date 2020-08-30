@@ -1,21 +1,44 @@
 .list-item{
-    height: 3rem;
-    width: 20rem;
+    height: 3.5rem;
+    width: 30rem;
     background: wheat;
     margin-bottom: 0.4rem;
+    padding: 0.5rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: relative;
 
         .list-item__details{
+            width : 25rem;
             display: flex;
             align-items: center;
+            justify-content: space-between;
+
+            .list-item__details-description{
+                font-size : 1.4rem;
+            }
+            .list-item__details-value-inc{
+                font-size: 1.2rem;
+                color : blue;
+            }
+            .list-item__details-value-exp{
+                font-size: 1.2rem;
+                color : red;
+            }
         }
 
 
         .list-item__delete{
             font-size: 2rem;
             background: none;
+            position: absolute;
+            right: 20px;
             border: none;
         }
 }
+@media (max-width: 1016px) {
+    .list-item {
+        width: 20rem;
+    }
+  }

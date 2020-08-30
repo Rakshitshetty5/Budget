@@ -12,7 +12,7 @@ const Spendings = () => (
         <BudgetOverview />
         <Form />
         <ListOverview />
-        <CustomButton spendings = {'spendings'}>Save</CustomButton>
+        <CustomButton spendings = {'spendings'} onClick = {() => window.print()}>Print</CustomButton>
     </div>
 
 )

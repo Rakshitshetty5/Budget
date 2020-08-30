@@ -1,7 +1,15 @@
 .list-overview{
-    margin : 2rem;
     display: flex;
     justify-content: space-between;
+    padding: 1rem;
+
+    .income-header{
+        color : blue;
+    }
+
+    .expenses-header{
+        color : red;
+    }
 
     .list-items{
         display : flex;
@@ -11,9 +19,11 @@
 
 
 }
-@media (max-width: 710px) {
+@media (max-width: 720px) {
     .list-overview {
         display: flex;
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
   }

@@ -8,7 +8,6 @@ import './App.scss';
 function App() {
   return (
     <div>
-      <h1>Budget</h1>
       <MonthPicker />
       <OptionSelector />
     </div>

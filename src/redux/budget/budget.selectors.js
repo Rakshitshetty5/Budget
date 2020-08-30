@@ -8,6 +8,15 @@ export const selectMonthlyBudget = createSelector(
 
 )
 
+export const selectMonthlyBudgetIncome = createSelector(
+    [selectMonthlyBudget],
+    monthlyBudget => monthlyBudget.inc
+)
+
+export const selectMonthlyBudgetExpense = createSelector(
+    [selectMonthlyBudget],
+    monthlyBudget => monthlyBudget.exp
+)
 
 export const selectTotalIncome = createSelector(
     [selectMonthlyBudget],
