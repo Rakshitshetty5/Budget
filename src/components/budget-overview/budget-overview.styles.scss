@@ -5,9 +5,39 @@
     justify-content: center;
     align-items: center;
 
-    .budget-overview__field{
+    .budget-overview__fields{
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
+        margin : 1rem 0;
+        height: 3rem;
+        width: 30rem;
+        padding: 1.5rem;
+        background: navy;
+
+        .budget-overview__field-property{
+            font-size: 1.5rem;
+            font-weight: 100;
+        }
+
+        .budget-overview__field-value{
+            font-size: 1.5rem;
+            color : white;
+        }
+    }
+    @media (max-width: 526px) {
+        .budget-overview__fields {
+            width: 90vw;
+        }
+      }
+
+    .field-income{
+        width: 20rem;
+        background: lightblue;
+    }
+
+    .field-expense{
+        width: 20rem;
+        background: rgb(248, 56, 56);
     }
 }

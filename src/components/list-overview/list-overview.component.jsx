@@ -20,36 +20,36 @@ const ListOverview = ( { monthlyIncome, monthlyExpense } ) => {
    
     return(
     <div className="list-overview">
-        <div className="income">
-            <h1 className="income-header">Income</h1>
-            {
-            income ?
-                <div className="list-items">
-                    {
-                        income.map(transaction => 
-                            <List transaction= {transaction} inc = {"inc"} key = {transaction[0]} />
-                        )
-                    }
-                </div>
-                :
-                <div></div>
-            }   
-        </div>
-        <div className="expenses">
-            <h1 className="expenses-header">Expenses</h1>
-            {
-                expenses ?
+        {
+        income ?
+            <div className="income">
+                <div className="income-header">Income</div>
                     <div className="list-items">
                         {
-                            expenses.map(transaction => 
-                                <List transaction= {transaction} key={transaction[0]}/>
+                            income.map(transaction => 
+                                <List transaction= {transaction} inc = {"inc"} key = {transaction[0]} />
                             )
                         }
-                    </div>
-                    :
-                <div></div>
-            }
-        </div>
+                </div>
+            </div>
+            :
+            <div></div>
+        }
+        {
+        expenses ?
+            <div className="expenses">
+                <div className="expenses-header">Expenses</div>
+                        <div className="list-items">
+                            {
+                                expenses.map(transaction => 
+                                    <List transaction= {transaction} key={transaction[0]}/>
+                                )
+                            }
+                </div>
+            </div>
+            :
+            <div></div>
+        }
     </div>
 ) }  
 

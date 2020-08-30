@@ -4,6 +4,8 @@ import { connect } from 'react-redux'
 
 import { deleteTransaction } from '../../redux/budget/budget.actions' 
 
+import { FormatMoney } from '../money-format.utils'
+
 import './list.styles.scss'
 
 
@@ -14,10 +16,10 @@ const List = ( { transaction, inc, deleteTransaction } ) => {
     return(
          <div className="list-item">
             <div className="list-item__details">
-                <div className = "list-item__details-description">{ transaction_description } </div>
-                <div className = {`${inc ? 'list-item__details-value-inc' : 'list-item__details-value-exp' }`}> : ${value} </div>
+                <div className = "list-item__details-description">{ transaction_description.toUpperCase() } </div>
+                <div className = {`${inc ? 'list-item__details-value-inc' : 'list-item__details-value-exp' }`}>  {inc ? "+ " : "- "}{FormatMoney(value)} </div>
             </div>
-            <button className="list-item__delete" onClick={() => deleteTransaction({transaction, inc})}>&#128502;</button>
+            <button className="list-item__delete" onClick={() => deleteTransaction({transaction, inc})}><i class="fa fa-times"></i></button>
         </div>
 ) }  
 

@@ -6,6 +6,8 @@ import { createStructuredSelector } from 'reselect'
 
 import {  selectTotalIncome, selectTotalExpense } from '../../redux/budget/budget.selectors'
 
+import { FormatMoney } from '../money-format.utils'
+
 var CanvasJSChart = CanvasJSReact.CanvasJSChart
 
 
@@ -24,7 +26,7 @@ const DoughnutChart = ( { totalIncome, totalExpense}) => {
             text: "Budget Overview"
         },
         subtitles: [{
-            text: `Total Income: ${totalIncome ? totalIncome : 0}`,
+            text: `Total Income: ${totalIncome ? FormatMoney(totalIncome) : 0}`,
             verticalAlign: "center",
             fontSize: 15,
             dockInsidePlotArea: true
