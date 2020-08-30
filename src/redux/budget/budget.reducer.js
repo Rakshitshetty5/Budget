@@ -1,5 +1,5 @@
 import { BudgetActionTypes }  from './budget.types';
-import { getMonth, addTransactionToBudget } from './budget.utils'
+import { getMonth, addTransactionToBudget, deleteTransaction } from './budget.utils'
 
 const INITITAL_STATE = {
     selectedMonth : '',
@@ -23,6 +23,13 @@ const budgetReducer = ( state = INITITAL_STATE, action ) => {
                 monthlyTransactions : addTransactionToBudget(state.monthlyTransactions, state.selectedMonth, action.payload)
             }
         }
+
+        case BudgetActionTypes.DELETE_TRANSACTION:{
+            return{
+                ...state,
+                monthlyTransactions : deleteTransaction(state.monthlyTransactions, state.selectedMonth, action.payload)
+            }
+        } 
 
         default: 
             return state

@@ -67,3 +67,28 @@ export const addTransactionToBudget = (budget, month, transaction) => {
 
 
 }
+
+
+export const deleteTransaction = (budget, month, transactionObj) => {
+    console.log(budget, month, transactionObj)
+
+    const operator = transactionObj.inc ? "inc" : "exp"
+
+
+    // delete budget[month][operator][transactionObj.transaction[0]]
+    
+    // never modify the same object component will not render new changes.
+    //use following
+
+    const modifiedBudget = JSON.parse(JSON.stringify(budget))
+    delete modifiedBudget[month][operator][transactionObj.transaction[0]]
+    
+    if(operator === "inc"){
+        modifiedBudget[month].TotalIncome = modifiedBudget[month].TotalIncome - transactionObj.transaction[1];
+    }else{
+        modifiedBudget[month].TotalExpense = modifiedBudget[month].TotalExpense - transactionObj.transaction[1];
+
+    }
+
+    return modifiedBudget;
+}
