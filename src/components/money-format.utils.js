@@ -6,6 +6,7 @@ export const FormatMoney = (value) => {
 
     let left = valueSplit[0];
 
+
     if(left.length > 3)
     {
         left = left.substr(0, left.length - 3) + ',' + left.substr(left.length-3,3)

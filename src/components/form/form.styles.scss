@@ -48,4 +48,19 @@
         border-radius: 50% 50%;
 
     }
+
+
+    @media (max-width: 526px) {
+        .add__description{
+            width: 15rem;
+
+        }
+    }
 }
+
+@media (max-width: 526px) {
+    .add__container{
+        width: 100vw;
+
+    }
+  }

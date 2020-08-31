@@ -11,9 +11,9 @@
         align-items: center;
         margin : 1rem 0;
         height: 3rem;
-        width: 30rem;
+        width: 20rem;
         padding: 1.5rem;
-        background: navy;
+        color: white;
 
         .budget-overview__field-property{
             font-size: 1.5rem;
@@ -34,10 +34,12 @@
     .field-income{
         width: 20rem;
         background: lightblue;
+        color: black;
     }
 
     .field-expense{
         width: 20rem;
-        background: rgb(248, 56, 56);
+        color : black;
+        background: #C3073F;
     }
 }

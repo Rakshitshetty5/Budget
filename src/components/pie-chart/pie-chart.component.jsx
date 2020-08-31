@@ -21,7 +21,7 @@ const PieChart = ({ totalExpense, expenseList }) => {
     }
 
     const options = {
-        theme: "bright",
+        theme: "dark1",
         animationEnabled: true,
         exportFileName: "Expenses Overview",
         exportEnabled: true,

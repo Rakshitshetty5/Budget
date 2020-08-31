@@ -4,13 +4,14 @@
     padding : 1rem;
     font-size: 1rem;
     color : wheat;
-    background: black;
+    background: #3500D3;
     border: none;
     outline : none;
 
     &.custom-button__middle{
         margin-left: calc(50% - 2.5rem);
         margin-top : 6rem;
+        margin-bottom: 1rem;
     }
 
     &.custom-button__option-selector{
@@ -20,7 +21,7 @@
         background: white;
         color: black;
         &.active{
-            background: darkblue;
+            background: #3500D3;
             color : white;
         }
     }

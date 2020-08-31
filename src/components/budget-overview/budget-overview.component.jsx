@@ -17,7 +17,7 @@ const BudgetOverview = ({ totalIncome, totalExpense }) => {
   return(
     <div className="budget-overview">
           <div className="budget-overview__fields">
-            <div className="budget-overview__field-property">Available Balance</div>
+            <div className="budget-overview__field-property">Balance</div>
             <span className="budget-overview__field-value"> {balance ? ((balance > totalExpense ? "+ " + FormatMoney(balance) : "- " + FormatMoney(balance))) : 0.00}</span>
           </div>
           <div className="budget-overview__fields field-income">

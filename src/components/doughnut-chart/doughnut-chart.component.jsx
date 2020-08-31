@@ -18,7 +18,7 @@ const DoughnutChart = ( { totalIncome, totalExpense}) => {
 
 
     const options = {
-        theme: "bright",
+        theme: "dark1",
         animationEnabled: true,
         exportFileName: "Budget Overview",
         exportEnabled: true,
