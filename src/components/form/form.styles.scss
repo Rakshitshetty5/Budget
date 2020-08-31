@@ -52,8 +52,20 @@
 
     @media (max-width: 526px) {
         .add__description{
-            width: 15rem;
+            width: 43vw;
+            padding-left: 0.5rem;
 
+        }
+        .add__value{
+            width: 19vw;
+            padding-left: 0.5rem;
+        }
+        .add__type{
+            width: 12vw;
+        }
+
+        .add__btn{
+            width: 12vw;
         }
     }
 }
@@ -61,7 +73,5 @@
 @media (max-width: 526px) {
     .add__container{
         width: 98vw;
-        
-
     }
   }
